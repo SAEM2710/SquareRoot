@@ -2,13 +2,14 @@
 using System.Collections;
 using UnityEngine.UI;
 
+enum EventType
+{
+    TV
+};
+
 public class SEvent : MonoBehaviour
 {
-    [SerializeField]
-    private Text m_tText;
-
-    [SerializeField]
-    private string m_sString;
+    [SerializeField] private EventType m_etEvent; 
 
     // Use this for initialization
     void Start ()
@@ -26,15 +27,22 @@ public class SEvent : MonoBehaviour
     {
         if (_c2dCollider.CompareTag("Player"))
         {
-            m_tText.text = m_sString;
+            switch(m_etEvent)
+            {
+                case EventType.TV:
+                    Debug.Log("enter tv");
+                    break;
+            }
         }
     }
 
     void OnTriggerExit2D(Collider2D _c2dCollider)
     {
-        if (_c2dCollider.CompareTag("Player"))
+        switch (m_etEvent)
         {
-            m_tText.text = "";
+            case EventType.TV:
+                Debug.Log("exit tv");
+                break;
         }
     }
 }
