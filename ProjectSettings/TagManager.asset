@@ -4,9 +4,10 @@
 TagManager:
   serializedVersion: 2
   tags:
-  - event
-  - floor
+  - Event
+  - Floor
   - Separation
+  - Door
   layers:
   - Default
   - TransparentFX

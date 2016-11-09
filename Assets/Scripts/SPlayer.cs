@@ -103,7 +103,7 @@ public class SPlayer : MonoBehaviour
     void OnTriggerStay2D(Collider2D _c2dCollider)
     {
         Debug.Log("stay in trigger");
-        if (_c2dCollider.CompareTag("event"))
+        if (_c2dCollider.CompareTag("Event"))
         {
             if(Input.GetButtonDown("Jump"))
             {
@@ -118,7 +118,7 @@ public class SPlayer : MonoBehaviour
 
     void OnCollisionEnter2D(Collision2D _c2dCollision)
     {
-        if(_c2dCollision.gameObject.CompareTag("floor"))
+        if(_c2dCollision.gameObject.CompareTag("Floor"))
         {
             GetComponent<Rigidbody2D>().velocity = Vector2.zero;
             m_bIsGrounded = true;
@@ -128,7 +128,7 @@ public class SPlayer : MonoBehaviour
 
     void OnCollisionExit2D(Collision2D _c2dCollision)
     {
-        if (_c2dCollision.gameObject.CompareTag("floor"))
+        if (_c2dCollision.gameObject.CompareTag("Floor"))
         {
             m_bIsGrounded = false;
         }

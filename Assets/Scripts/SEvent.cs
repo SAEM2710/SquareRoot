@@ -4,7 +4,8 @@ using UnityEngine.UI;
 
 enum EventType
 {
-    TV
+    TV,
+    Door
 };
 
 public class SEvent : MonoBehaviour
@@ -31,6 +32,9 @@ public class SEvent : MonoBehaviour
             switch(m_etEvent)
             {
                 case EventType.TV:
+                    m_srTVTexte.enabled = true;
+                    break;
+                case EventType.Door:
                     m_srTVTexte.enabled = true;
                     break;
             }
