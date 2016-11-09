@@ -28,15 +28,15 @@ public class SCamera : MonoBehaviour
 
     void PlacementCamera()
     {
-        Debug.Log("Separation visible : " + m_goSeparation.GetComponent<Renderer>().isVisible);
-        if (!m_goSeparation.GetComponent<Renderer>().isVisible)
-        {
+        //Debug.Log("Separation visible : " + m_goSeparation.GetComponent<Renderer>().isVisible);
+        //if (!m_goSeparation.GetComponent<Renderer>().isVisible)
+        //{
             Vector3 v3CameraPosition = new Vector3();
             v3CameraPosition = m_goPlayer.transform.position;
             v3CameraPosition.y = m_fCameraHeight;
             v3CameraPosition.z = m_fCameraDepth;
             transform.position = v3CameraPosition;
-        }
+        //}
     }
 
      /*bool SafeFrameCheck()

@@ -9,13 +9,14 @@ enum EventType
 
 public class SEvent : MonoBehaviour
 {
-    [SerializeField] private EventType m_etEvent; 
+    [SerializeField] private EventType m_etEvent;
+    [SerializeField] private SpriteRenderer m_srTVTexte;
 
     // Use this for initialization
     void Start ()
     {
-	
-	}
+        m_srTVTexte.enabled = false;
+    }
 	
 	// Update is called once per frame
 	void Update ()
@@ -30,7 +31,7 @@ public class SEvent : MonoBehaviour
             switch(m_etEvent)
             {
                 case EventType.TV:
-                    Debug.Log("enter tv");
+                    m_srTVTexte.enabled = true;
                     break;
             }
         }
@@ -41,7 +42,7 @@ public class SEvent : MonoBehaviour
         switch (m_etEvent)
         {
             case EventType.TV:
-                Debug.Log("exit tv");
+                m_srTVTexte.enabled = false;
                 break;
         }
     }
