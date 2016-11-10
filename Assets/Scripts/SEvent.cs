@@ -2,21 +2,34 @@
 using System.Collections;
 using UnityEngine.UI;
 
-enum EventType
+/*enum EventType
 {
     TV,
     Door
-};
+};*/
 
 public class SEvent : MonoBehaviour
 {
-    [SerializeField] private EventType m_etEvent;
-    [SerializeField] private SpriteRenderer m_srTVTexte;
+    /*[SerializeField]*/ //public EventType m_etEvent;
+
+    /*public EventType etEvent
+    {
+        get
+        {
+            return m_etEvent;
+        }
+        set
+        {
+            m_etEvent = value;
+        }
+    }*/
+
+    //[SerializeField] private SpriteRenderer m_srTVTexte;
 
     // Use this for initialization
     void Start ()
     {
-        m_srTVTexte.enabled = false;
+        //m_srTVTexte.enabled = false;
     }
 	
 	// Update is called once per frame
@@ -25,7 +38,7 @@ public class SEvent : MonoBehaviour
 	
 	}
 
-    void OnTriggerEnter2D(Collider2D _c2dCollider)
+    /*void OnTriggerEnter2D(Collider2D _c2dCollider)
     {
         if (_c2dCollider.CompareTag("Player"))
         {
@@ -49,5 +62,5 @@ public class SEvent : MonoBehaviour
                 m_srTVTexte.enabled = false;
                 break;
         }
-    }
+    }*/
 }

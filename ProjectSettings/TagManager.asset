@@ -8,6 +8,7 @@ TagManager:
   - Floor
   - Separation
   - Door
+  - TV
   layers:
   - Default
   - TransparentFX
@@ -17,8 +18,8 @@ TagManager:
   - UI
   - 
   - 
-  - 
-  - 
+  - Collider
+  - Event
   - 
   - 
   - 

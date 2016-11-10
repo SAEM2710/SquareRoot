@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using UnityEngine.SceneManagement;
 
 enum MovementMode
 {
@@ -100,14 +101,38 @@ public class SPlayer : MonoBehaviour
 
     #region Triggers
 
-    void OnTriggerStay2D(Collider2D _c2dCollider)
+    void OnTriggerEnter2D(Collider2D _c2dCollider)
     {
-        Debug.Log("stay in trigger");
-        if (_c2dCollider.CompareTag("Event"))
+        if (_c2dCollider.gameObject.layer == 9)
         {
-            if(Input.GetButtonDown("Jump"))
+            string sTag;
+            sTag = _c2dCollider.tag; 
+            switch(sTag)
             {
-                Debug.Log("event");
+                case "TV":
+                    _c2dCollider.transform.GetChild(0).GetComponent<SpriteRenderer>().enabled = true;
+                    break;
+                case "Door":
+                    SceneManager.LoadScene("T2");
+                    break;
+            }
+        }
+    }
+
+    void OnTriggerExit2D(Collider2D _c2dCollider)
+    {
+        if (_c2dCollider.gameObject.layer == 9)
+        {
+            string sTag;
+            sTag = _c2dCollider.tag;
+            switch (sTag)
+            {
+                case "TV":
+                    _c2dCollider.transform.GetChild(0).GetComponent<SpriteRenderer>().enabled = false;
+                    break;
+                /*case "Door":
+                    SceneManager.LoadScene("T2");
+                    break;*/
             }
         }
     }
